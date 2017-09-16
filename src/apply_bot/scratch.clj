@@ -9,6 +9,23 @@
             [webica.web-driver-wait :as wait]
             [webica.web-element :as element]))
 
+(browser/)
+
+(driver/show-functions)
+
+(w/)
+
+(chrome/quit)
+
+(wait/)
+
+(element/)
+
+(driver/)
+
+(by/)
+
+
 ;; (require '[sparkledriver.browser :refer [with-browser make-browser fetch!]])
 ;; (require '[sparkledriver.element :refer [find-by-xpath* text]])
 
@@ -18,7 +35,6 @@
 ;;       (nth 2)
 ;;       text))
 
-(def expected-title "Cheese! - Google Search")
 
 (defn cheese []
   (browser/get "http://www.google.com")
@@ -35,8 +51,21 @@
     (browser/get-title)))
 
 
-           (let [_ (chrome/start-chrome)
-                 title (cheese)]
-             (browser/quit)
-             title)
+(let [_ (chrome/start-chrome)
+title (cheese)]
+(browser/quit)
+title)
+
+
+
+
+(let [_ (firefox/start-firefox)
+      title (cheese)]
+  (browser/quit)
+  title)
+
+
+;;;; PLAYING WITH CHROME NOW
+
+
 

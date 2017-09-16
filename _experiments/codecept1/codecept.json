@@ -1,0 +1,22 @@
+{
+  "tests": "./*_test.js",
+  "timeout": 10000,
+  "output": "./output",
+  "helpers": {
+    "WebDriverIO": {
+      "url": "https://www.goodreads.com/",
+      "browser": "chrome"
+    },
+    "SeleniumWebdriver": {
+      "url": "https://www.goodreads.com/",
+      "browser": "chrome"
+    },
+    "Nightmare": {
+      "url": "https://www.goodreads.com/"
+    }
+  },
+  "include": {},
+  "bootstrap": false,
+  "mocha": {},
+  "name": "codecept1"
+}
