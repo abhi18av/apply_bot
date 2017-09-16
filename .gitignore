@@ -9,3 +9,8 @@ pom.xml.asc
 /.nrepl-port
 .hgignore
 .hg/
+
+
+_resources
+/webica.log
+/pemfile_cached

@@ -4,7 +4,8 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.9.0-alpha17"]
-				  [sparkledriver "0.2.0"]]
+				  [sparkledriver "0.2.0"]
+				  [webica "3.0.0-beta2-clj0"]]
   :main ^:skip-aot apply-bot.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
