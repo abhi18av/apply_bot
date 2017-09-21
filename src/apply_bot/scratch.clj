@@ -9,31 +9,18 @@
             [webica.web-driver-wait :as wait]
             [webica.web-element :as element]))
 
-(browser/)
-
-(driver/show-functions)
-
-(w/)
-
-(chrome/quit)
-
-(wait/)
-
-(element/)
-
-(driver/)
-
-(by/)
 
 
-;; (require '[sparkledriver.browser :refer [with-browser make-browser fetch!]])
-;; (require '[sparkledriver.element :refer [find-by-xpath* text]])
+(require '[sparkledriver.browser :refer [with-browser make-browser fetch!]])
+(require '[sparkledriver.element :refer [find-by-xpath* text]])
 
-;; (with-browser [browser (make-browser)]
-;;   (-> (fetch! browser "http://clojure.org")
-;;       (find-by-xpath* "//div[@class='clj-intro-message']/p")
-;;       (nth 2)
-;;       text))
+
+
+(with-browser [browser (make-browser :headless false)]
+  (-> (fetch! browser "http://clojure.org")
+      (find-by-xpath* "//div[@class='clj-intro-message']/p")
+      (nth 2)
+      text))
 
 
 (defn cheese []
@@ -51,21 +38,29 @@
     (browser/get-title)))
 
 
+
+
+(chrome/get "http://www.google.com")
+
+(def q (browser/find-element (by/name "q")))
+
+(element/send-keys q "This is being controlled by the browser")
+
+
+
 (let [_ (chrome/start-chrome)
 title (cheese)]
-(browser/quit)
-title)
+;(browser/quit)
+  title
+  )
 
 
-
-
-(let [_ (firefox/start-firefox)
-      title (cheese)]
-  (browser/quit)
-  title)
-
+(chrome/location)
+(first (chrome/find-elements-by-css-selector "._NId"))
 
 ;;;; PLAYING WITH CHROME NOW
 
 
+
+(w/selenium-classes)
 
