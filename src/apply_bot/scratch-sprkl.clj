@@ -5,12 +5,12 @@
             [sparkledriver.retry :as sprkl-retry]))
 
 
-;; sparkle-driver
 
-
-(sprkl-browser/with-browser [browser (make-browser)]
-  (-> (fetch! browser "http://clojure.org")
-      (find-by-xpath* "//div[@class='clj-intro-message']/p")
+(sprkl-browser/with-browser [browser (sprkl-browser/make-browser :headless false)]
+  (-> (sprkl-browser/fetch! browser "http://clojure.org")
+      (sprkl-element/find-by-xpath* "//div[@class='clj-intro-message']/p")
       (nth 2)
-      text))
+      sprkl-element/text))
+
+
 

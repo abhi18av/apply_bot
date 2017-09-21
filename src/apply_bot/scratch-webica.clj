@@ -15,9 +15,9 @@
 
 (driver/show-functions)
 
-(w/)
+(webica/selenium-classes )
 
-(chrome/quit)
+(chrome/location)
 
 (wait/)
 
@@ -39,13 +39,13 @@
                    (string/starts-with?
                     (string/lower-case (driver/get-title driver))
                     "cheese!"))))
-    (w/sleep 2)
+    (webica/sleep 2)
     (browser/get-title)))
 
 
 (let [_ (chrome/start-chrome)
       title (cheese)]
-  (browser/quit)
+;  (browser/quit)
   title)
 
 
@@ -53,7 +53,7 @@
 
 (let [_ (firefox/start-firefox)
       title (cheese)]
-  (browser/quit)
+;  (browser/quit)
   title)
 
 
